@@ -18,6 +18,8 @@ from __future__ import annotations
 
 import argparse
 
+from typing import List
+
 from liquidcalc import __version__
 
 
@@ -25,7 +27,7 @@ __author__: str = "Michael Sasser"
 __email__: str = "Michael@MichaelSasser.org"
 
 
-def init_parser() -> argparse.ArgumentParser:
+def init_parser(args: List[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=("Calculate a simple liquid mixture."),
         epilog=(
@@ -76,7 +78,7 @@ def init_parser() -> argparse.ArgumentParser:
         default=20.0,
         help="the amount of nicotine of 1 ml in mg/ml",
     )
-    return parser
+    return parser.parse_args(args)
 
 
 # vim: set ft=python :

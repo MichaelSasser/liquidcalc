@@ -16,44 +16,31 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 from __future__ import annotations
 
-import argparse
-import sys
-
 from typing import List
 from typing import Tuple
 
-from .calc import Calc
-from .parser import init_parser
-from .table import get_table
+from tabulate import tabulate  # pylint: disable=E0401
 
 
 __author__: str = "Michael Sasser"
 __email__: str = "Michael@MichaelSasser.org"
 
 
-def main() -> int:
-    parser: argparse.Namespace = init_parser(sys.argv[1:])
-    calc: Calc = Calc(parser)
+def get_table(
+    ingredients: List[Tuple[str, float, str]], quantity: float, nicotine: float
+) -> str:
+    table: str = tabulate(
+        ingredients,
+        headers=("Index", "Ingredient", "Quantity", "Unit"),
+        tablefmt="psql",
+        floatfmt="5.1f",
+    )
 
-    ingredients: List[Tuple[str, float, str]] = []
-
-    if calc.shot != 0.0:
-        ingredients.append(("Shot", calc.shot, "ml"),)
-    if calc.pg != 0.0:
-        ingredients.append(("Propane-1,2-diol (PG)", calc.pg, "ml"),)
-    if calc.vg != 0.0:
-        ingredients.append(("Propane-1,2,3-triol (VG)", calc.vg, "ml"),)
-    if calc.h2o != 0.0:
-        ingredients.append(("H\N{SUBSCRIPT TWO}O (Water)", calc.h2o, "ml"),)
-    if calc.aroma != 0.0:
-        ingredients.append(("Aroma", calc.aroma, "ml"),)
-
-    if len(ingredients) == 1:
-        print("If you set all ingredients to 0.0, there is nothing to do.")
-        return 1
-
-    print(get_table(ingredients, calc.quantity, calc.nicotine))
-    return 0
+    table += (
+        f"\nActual Quantity = {quantity:6.2f} ml\n"
+        f"Actual Nicotine = {nicotine:6.2f} mg/ml"
+    )
+    return table
 
 
 # vim: set ft=python :

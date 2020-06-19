@@ -143,6 +143,7 @@ pyflakes = ">=2.2.0,<2.3.0"
 reference = "a7be77f761a4c29121d6bb6f61c11902281f9105"
 type = "git"
 url = "https://gitlab.com/pycqa/flake8"
+
 [[package]]
 category = "dev"
 description = "A plugin for flake8 finding likely bugs and design problems in your program. Contains warnings that don't belong in pyflakes and pycodestyle."
@@ -454,6 +455,20 @@ testing = ["fields", "hunter", "process-tests (2.0.2)", "six", "pytest-xdist", "
 
 [[package]]
 category = "dev"
+description = "Thin-wrapper around the mock package for easier use with pytest"
+name = "pytest-mock"
+optional = false
+python-versions = ">=3.5"
+version = "3.1.1"
+
+[package.dependencies]
+pytest = ">=2.7"
+
+[package.extras]
+dev = ["pre-commit", "tox", "pytest-asyncio"]
+
+[[package]]
+category = "dev"
 description = "JSON RPC 2.0 server library"
 name = "python-jsonrpc-server"
 optional = false
@@ -667,7 +682,7 @@ python-versions = "*"
 version = "0.30.0"
 
 [metadata]
-content-hash = "f8425bb2c001a49bf68925dd6e427651dd7630ca500ecd64abb1c69703b39b1f"
+content-hash = "dfab4a02e7c977f1b9c1674cc3222a01d9bdac7cce505d9088a3a4b1587b99c1"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -913,6 +928,10 @@ pytest = [
 pytest-cov = [
     {file = "pytest-cov-2.10.0.tar.gz", hash = "sha256:1a629dc9f48e53512fcbfda6b07de490c374b0c83c55ff7a1720b3fccff0ac87"},
     {file = "pytest_cov-2.10.0-py2.py3-none-any.whl", hash = "sha256:6e6d18092dce6fad667cd7020deed816f858ad3b49d5b5e2b1cc1c97a4dba65c"},
+]
+pytest-mock = [
+    {file = "pytest-mock-3.1.1.tar.gz", hash = "sha256:636e792f7dd9e2c80657e174c04bf7aa92672350090736d82e97e92ce8f68737"},
+    {file = "pytest_mock-3.1.1-py3-none-any.whl", hash = "sha256:a9fedba70e37acf016238bb2293f2652ce19985ceb245bbd3d7f3e4032667402"},
 ]
 python-jsonrpc-server = [
     {file = "python-jsonrpc-server-0.3.4.tar.gz", hash = "sha256:c73bf5495c9dd4d2f902755bedeb6da5afe778e0beee82f0e195c4655352fe37"},
