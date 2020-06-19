@@ -1,0 +1,14 @@
+[project-run]
+command=poetry run python app.py
+cwd=<root>
+output=terminal
+
+[project-update]
+command=poetry update
+cwd=<root>
+output=terminal
+
+[project-test]
+command=poetry run pytest
+cwd=<root>
+output=terminal
