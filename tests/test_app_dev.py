@@ -16,26 +16,38 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 from __future__ import annotations
 
-from liquidcalc.table import get_table
+import sys
+
+from typing import List
+from unittest.mock import patch
+
+import pytest
+
+from app import start
 
 
-def test_table() -> None:
-    # Setup
+TEST_ARGS: List[str] = [
+    sys.argv[0],
+    "200.0",
+    "--aroma=1.6",
+    "--nicotine=10.0",
+    "--pg=50.0",
+    "--shot=20.0",
+    "--vg=40.0",
+]
 
-    desired: str = """+---------+--------------+------------+
-| Index   |   Ingredient | Quantity   |
-|---------+--------------+------------|
-| a       |          1.1 | b          |
-| c       |          2.2 | d          |
-+---------+--------------+------------+
-Actual Quantity =  12.34 ml
-Actual Nicotine =  56.78 mg/ml"""
 
-    # Exercise
-    actual: str = get_table([("a", 1.1, "b"), ("c", 2.2, "d")], 12.34, 56.78)
-
+def test_main_no_exception() -> None:
+    # Setup - None
+    # Exercise - None
     # Verify
-    assert desired == actual
+    with patch.object(sys, "argv", TEST_ARGS):
+        try:
+            start()
+        except SystemExit:
+            return
+        except Exception as e:  # pylint: disable=W0703
+            pytest.fail(e)
 
     # Cleanup - None
 

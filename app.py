@@ -19,7 +19,11 @@ import sys
 from liquidcalc.app import main
 
 
-if __name__ == "__main__":
+def start() -> None:
     sys.exit(main())
+
+
+if __name__ == "__main__":
+    start()
 
 # vim: set ft=python :
