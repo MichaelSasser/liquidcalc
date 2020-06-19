@@ -61,8 +61,8 @@ def main() -> int:
     )
 
     print()
-    print(f"Real Quantity = {calc.quantity:6.2f} ml")
-    print(f"Real Nicotine = {calc.nicotine:6.2f} mg/ml")
+    print(f"Actual Quantity = {calc.quantity:6.2f} ml")
+    print(f"Actual Nicotine = {calc.nicotine:6.2f} mg/ml")
 
     return 0
 

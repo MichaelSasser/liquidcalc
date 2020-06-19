@@ -1,5 +1,5 @@
 [project-run]
-command=poetry run python app.py
+command=poetry run python app.py 200
 cwd=<root>
 output=terminal
 

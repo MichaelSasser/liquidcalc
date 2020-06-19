@@ -44,7 +44,7 @@ def init_parser() -> argparse.ArgumentParser:
         "-a",
         "--aroma",
         type=float,
-        default=1.8,
+        default=1.6,
         help="the percentage of aroma, that will be added",
     )
     parser.add_argument(

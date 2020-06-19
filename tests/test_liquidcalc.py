@@ -18,7 +18,11 @@ from __future__ import annotations
 
 import re
 
-from ldapman import __version__
+from liquidcalc import __version__
+
+
+__author__: str = "Michael Sasser"
+__email__: str = "Michael@MichaelSasser.org"
 
 
 def test_version() -> None:
