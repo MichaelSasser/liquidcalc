@@ -20,6 +20,7 @@ import argparse
 
 from liquidcalc import __version__
 
+
 __author__: str = "Michael Sasser"
 __email__: str = "Michael@MichaelSasser.org"
 

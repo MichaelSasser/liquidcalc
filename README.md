@@ -1,11 +1,11 @@
 # LDAPman
 
-LiquidCalc (Liquid Calculator) is a python program to generate mixing 
+LiquidCalc (Liquid Calculator) is a python program to generate mixing
 quantities for simple vaping liquids.
 
 ## Chat
 
-If you have any thoughts or questions, you can join the project channel 
+If you have any thoughts or questions, you can join the project channel
 ``#LiquidCalc:michaelsasser.org``.
 
 ## Semantic Versioning

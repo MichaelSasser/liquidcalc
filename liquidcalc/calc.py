@@ -17,8 +17,8 @@
 
 from __future__ import annotations
 
-from typing import Optional
 import argparse
+
 
 __author__: str = "Michael Sasser"
 __email__: str = "Michael@MichaelSasser.org"

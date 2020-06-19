@@ -16,15 +16,16 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 from __future__ import annotations
 
-from typing import Tuple
-from typing import List
-
 import argparse
+
+from typing import List
+from typing import Tuple
 
 from tabulate import tabulate
 
-from .parser import init_parser
 from .calc import Calc
+from .parser import init_parser
+
 
 __author__: str = "Michael Sasser"
 __email__: str = "Michael@MichaelSasser.org"

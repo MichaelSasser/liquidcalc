@@ -16,12 +16,13 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from __future__ import annotations
-from typing import Dict
+
 from argparse import Namespace
 
 import pytest
 
 from liquidcalc.calc import Calc
+
 
 __author__: str = "Michael Sasser"
 __email__: str = "Michael@MichaelSasser.org"
