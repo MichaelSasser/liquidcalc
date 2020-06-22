@@ -1,4 +1,4 @@
-# LDAPman
+# LiquidCalc
 
 LiquidCalc (Liquid Calculator) is a python program to generate mixing
 quantities for simple vaping liquids.

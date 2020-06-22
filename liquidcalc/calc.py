@@ -19,6 +19,8 @@ from __future__ import annotations
 
 import argparse
 
+from functools import cached_property
+
 
 __author__: str = "Michael Sasser"
 __email__: str = "Michael@MichaelSasser.org"
@@ -33,32 +35,32 @@ class Calc(object):
         self._nicotine: float = float(args.nicotine)
         self._shot: float = float(args.shot)
 
-    @property
+    @cached_property
     def aroma(self) -> float:
         return self._aroma * self._quantity / 100.0
 
-    @property
+    @cached_property
     def shot(self) -> float:
         return self._quantity * self._nicotine / self._shot
 
-    @property
+    @cached_property
     def pg(self) -> float:
         return self._pg * (self._quantity - self.shot) / 100.0
 
-    @property
+    @cached_property
     def vg(self) -> float:
         return self._vg * (self._quantity - self.shot) / 100.0
 
-    @property
+    @cached_property
     def h2o(self) -> float:
         return self._quantity - self.shot - self.pg - self.vg
 
-    @property
+    @cached_property
     def quantity(self) -> float:
         # test: self._quantity + aroma
         return self.pg + self.vg + self.h2o + self.shot + self.aroma
 
-    @property
+    @cached_property
     def nicotine(self) -> float:
         return self.shot * self._shot / self.quantity
 
