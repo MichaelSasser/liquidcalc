@@ -12,3 +12,8 @@ output=terminal
 command=poetry run pytest
 cwd=<root>
 output=terminal
+
+[project-profile]
+command=poetry run python -m cProfile -s cumtime app.py 200
+cwd=<root>
+output=terminal
